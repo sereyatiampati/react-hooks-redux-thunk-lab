@@ -4,13 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchCats } from "./catsSlice";
 
 function Cats() {
-  const catPics = useSelector((state) => state.entities);
+  const catPics = useSelector((state) => state.cats.entities);
   const dispatch = useDispatch()
   console.log(catPics);
 
   useEffect(() => {
     dispatch(fetchCats());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
